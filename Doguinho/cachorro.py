@@ -25,10 +25,15 @@ class Cachorro:
     def comer(self, valor):
         if self.fome > valor:
             self.fome -= valor
-            self.notif.novaMsg(self.nome + ' Amou essa comida')
+            self.notif.novaMsg(self.nome + ' amou essa comida')
         else:
             self.notif.novaMsg(self.nome + ' não está com fome')
-
+            
+    def brincar(self):
+        self.fome += 30
+        self.felicidade += 40
+        self.notif.novaMsg(self.nome + ' brincou e esta com fome')
+        
     def carinho(self):
         chance = randint(0,1)
         if chance == 1:
